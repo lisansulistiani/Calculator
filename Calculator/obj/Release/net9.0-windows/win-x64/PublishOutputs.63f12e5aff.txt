@@ -1,0 +1,7 @@
+D:\Projects\[2025]\Calculator\Calculator\bin\Release\net9.0-windows\win-x64\publish\Calculator.pdb
+D:\Projects\[2025]\Calculator\Calculator\bin\Release\net9.0-windows\win-x64\publish\D3DCompiler_47_cor3.dll
+D:\Projects\[2025]\Calculator\Calculator\bin\Release\net9.0-windows\win-x64\publish\PenImc_cor3.dll
+D:\Projects\[2025]\Calculator\Calculator\bin\Release\net9.0-windows\win-x64\publish\PresentationNative_cor3.dll
+D:\Projects\[2025]\Calculator\Calculator\bin\Release\net9.0-windows\win-x64\publish\vcruntime140_cor3.dll
+D:\Projects\[2025]\Calculator\Calculator\bin\Release\net9.0-windows\win-x64\publish\wpfgfx_cor3.dll
+D:\Projects\[2025]\Calculator\Calculator\bin\Release\net9.0-windows\win-x64\publish\Calculator.exe
