@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Projects\\[2025]\\Calculator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{304653F5-DF0F-4636-8DFB-56FF4A9F6E5B}|Calculator\\Calculator.csproj|d:\\projects\\[2025]\\calculator\\calculator\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{304653F5-DF0F-4636-8DFB-56FF4A9F6E5B}|Calculator\\Calculator.csproj|solutionrelative:calculator\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{304653F5-DF0F-4636-8DFB-56FF4A9F6E5B}|Calculator\\Calculator.csproj|d:\\projects\\[2025]\\calculator\\calculator\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{304653F5-DF0F-4636-8DFB-56FF4A9F6E5B}|Calculator\\Calculator.csproj|solutionrelative:calculator\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{304653F5-DF0F-4636-8DFB-56FF4A9F6E5B}|Calculator\\Calculator.csproj|d:\\projects\\[2025]\\calculator\\calculator\\calculator.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{304653F5-DF0F-4636-8DFB-56FF4A9F6E5B}|Calculator\\Calculator.csproj|solutionrelative:calculator\\calculator.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{304653F5-DF0F-4636-8DFB-56FF4A9F6E5B}|Calculator\\Calculator.csproj|d:\\projects\\[2025]\\calculator\\calculator\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{304653F5-DF0F-4636-8DFB-56FF4A9F6E5B}|Calculator\\Calculator.csproj|solutionrelative:calculator\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{304653F5-DF0F-4636-8DFB-56FF4A9F6E5B}|Calculator\\Calculator.csproj|d:\\projects\\[2025]\\calculator\\calculator\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,19 +34,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Calculator",
               "DocumentMoniker": "D:\\Projects\\[2025]\\Calculator\\Calculator\\Calculator.csproj",
               "RelativeDocumentMoniker": "Calculator\\Calculator.csproj",
               "ToolTip": "D:\\Projects\\[2025]\\Calculator\\Calculator\\Calculator.csproj",
               "RelativeToolTip": "Calculator\\Calculator.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-01T09:55:43.895Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T09:55:43.895Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Projects\\[2025]\\Calculator\\Calculator\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Calculator\\MainWindow.xaml",
@@ -65,11 +64,12 @@
               "ToolTip": "D:\\Projects\\[2025]\\Calculator\\Calculator\\Styles\\Styles.xaml",
               "RelativeToolTip": "Calculator\\Styles\\Styles.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-01T09:01:24.899Z"
+              "WhenOpened": "2025-05-01T09:01:24.899Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Readme.md",
               "DocumentMoniker": "D:\\Projects\\[2025]\\Calculator\\Calculator\\Readme.md",
               "RelativeDocumentMoniker": "Calculator\\Readme.md",

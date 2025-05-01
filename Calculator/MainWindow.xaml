@@ -40,7 +40,7 @@
                     <Button Width="30" Height="Auto" Padding="5" Style="{StaticResource MinMaxButton}" Command="{Binding WindowCommandMaximize}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Content="🗗"/>
                     <Button Width="30" Height="Auto" Padding="5" Style="{StaticResource CloseButton}" Command="{Binding WindowCommandClose}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Content="🗙"/>
                 </WrapPanel>
-                <TextBlock Text="🖩 Calculator" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                <TextBlock Text="🖩 Pinkculator" VerticalAlignment="Center" Margin="10,0,0,0"/>
             </Grid>
 
             <Grid Grid.Row="1">
