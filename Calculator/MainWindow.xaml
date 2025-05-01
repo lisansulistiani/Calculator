@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Calculator.ViewModels"
         xmlns:local="clr-namespace:Calculator"
-        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
         Title="MainWindow" 
         Width = "360"
@@ -15,97 +14,80 @@
         Background="Transparent"
         Icon="Assets/Icons/Calculator.ico"
         >
-    
+
     <Window.DataContext>
         <vm:CalculatorViewModel/>
     </Window.DataContext>
-    
+
     <!--Width="{x:Static SystemParameters.PrimaryScreenWidth}"  
         Height="{x:Static SystemParameters.PrimaryScreenHeight}"-->
-
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Margin="0,0,0,0">
-            <Border Style="{StaticResource WindowsBorderStyle}">
-                <Border.InputBindings>
-                    <MouseBinding MouseAction="LeftClick"
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="0,0,0,0">
+                <Border Style="{StaticResource WindowsBorderStyle}" Padding="5" Panel.ZIndex="1" Background="Transparent">
+                    <Border.InputBindings>
+                        <MouseBinding MouseAction="LeftClick"
                                   Command="{Binding DragMoveCommand}"
                                   CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" />
-                </Border.InputBindings>
-            </Border>
+                    </Border.InputBindings>
+                </Border>
 
-            <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0">
-                <Button Width="30" Height="Auto" Padding="5" Style="{StaticResource MinMaxButton}" Command="{Binding WindowCommandMinimize}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
-                    <Button.Content>
-                        <iconPacks:MaterialDesign Kind="Minimize"/>
-                    </Button.Content>
-                </Button>
-                <Button Width="30" Height="Auto" Padding="5" Style="{StaticResource MinMaxButton}" Command="{Binding WindowCommandMaximize}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
-                    <Button.Content>
-                        <iconPacks:PackIconMaterial Kind="WindowMaximize"/>
-                    </Button.Content>
-                </Button>
-                <Button Width="30" Height="Auto" Padding="5" Style="{StaticResource CloseButton}" Command="{Binding WindowCommandClose}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
-                    <Button.Content>
-                        <iconPacks:PackIconMaterial Kind="Close" />
-                    </Button.Content>
-                </Button>
-            </WrapPanel>
-            <TextBlock Text="Calculator" VerticalAlignment="Center" Margin="10,0,0,0"/>
-        </Grid>
+                <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,0,0" Height="26" Panel.ZIndex="2">
+                    <Button Width="30" Height="Auto" Padding="5" Style="{StaticResource MinMaxButton}" Command="{Binding WindowCommandMinimize}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Content="🗕"/>
+                    <Button Width="30" Height="Auto" Padding="5" Style="{StaticResource MinMaxButton}" Command="{Binding WindowCommandMaximize}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Content="🗗"/>
+                    <Button Width="30" Height="Auto" Padding="5" Style="{StaticResource CloseButton}" Command="{Binding WindowCommandClose}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Content="🗙"/>
+                </WrapPanel>
+                <TextBlock Text="🖩 Calculator" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            </Grid>
 
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="3*"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
+            <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="3*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <TextBlock x:Name="formulaTxtBlock" Text="{Binding Formula}" Style="{StaticResource FormulaTxtBlock}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <TextBlock x:Name="formulaTxtBlock" Text="{Binding Formula}" Style="{StaticResource FormulaTxtBlock}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <TextBlock x:Name="resultTxtBlock" Text="{Binding Display}" Style="{StaticResource DisplayTxtBlock}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"/>
+                    </Grid>
                 </Grid>
-                <Grid Grid.Row="1">
-                    <TextBlock x:Name="resultTxtBlock" Text="{Binding Display}" Style="{StaticResource DisplayTxtBlock}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"/>
+                <Grid Grid.Row="1" Margin="2">
+                    <UniformGrid Columns="4" Rows="5">
+                        <Button x:Name="clearBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="C" Content="C"/>
+                        <Button x:Name="eraseBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="Remove" Content="⌫"/>
+                        <Button x:Name="percentBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="%" Content="%"/>
+                        <Button x:Name="divideBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="÷" Content="÷"/>
+
+                        <Button x:Name="sevenBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="7" Content="7"/>
+                        <Button x:Name="eightBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="8" Content="8"/>
+                        <Button x:Name="nineBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="9" Content="9"/>
+                        <Button x:Name="multiplyBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="×" Content="×"/>
+
+                        <Button x:Name="fourBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="4" Content="4"/>
+                        <Button x:Name="fiveBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="5" Content="5"/>
+                        <Button x:Name="sixBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="6" Content="6"/>
+                        <Button x:Name="subtractionBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="-" Content="-"/>
+
+                        <Button x:Name="oneBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="1" Content="1"/>
+                        <Button x:Name="twoBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="2" Content="2"/>
+                        <Button x:Name="threeBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="3" Content="3"/>
+                        <Button x:Name="additionBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="+" Content="+"/>
+
+                        <Button x:Name="plusMinusBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="(+/-)" Content="(+/-)"/>
+                        <Button x:Name="zeroBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="0" Content="0"/>
+                        <Button x:Name="commaBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="." Content="."/>
+                        <Button x:Name="equalBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="=" Content="="/>
+                    </UniformGrid>
                 </Grid>
-            </Grid>
-            <Grid Grid.Row="1" Margin="2">
-                <UniformGrid Columns="4" Rows="5">
-                    <Button x:Name="clearBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="C" Content="C"/>
-                    <Button x:Name="eraseBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="Remove">
-                        <Button.Content>
-                            <iconPacks:PackIconMaterial Kind="Backspace"/>
-                        </Button.Content>
-                    </Button>
-                    <Button x:Name="percentBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="%" Content="%"/>
-                    <Button x:Name="divideBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="÷" Content="÷"/>
-
-                    <Button x:Name="sevenBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="7" Content="7"/>
-                    <Button x:Name="eightBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="8" Content="8"/>
-                    <Button x:Name="nineBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="9" Content="9"/>
-                    <Button x:Name="multiplyBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="×" Content="×"/>
-
-                    <Button x:Name="fourBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="4" Content="4"/>
-                    <Button x:Name="fiveBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="5" Content="5"/>
-                    <Button x:Name="sixBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="6" Content="6"/>
-                    <Button x:Name="subtractionBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="-" Content="-"/>
-
-                    <Button x:Name="oneBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="1" Content="1"/>
-                    <Button x:Name="twoBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="2" Content="2"/>
-                    <Button x:Name="threeBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="3" Content="3"/>
-                    <Button x:Name="additionBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="+" Content="+"/>
-
-                    <Button x:Name="plusMinusBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="(+/-)" Content="(+/-)"/>
-                    <Button x:Name="zeroBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="0" Content="0"/>
-                    <Button x:Name="commaBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="." Content="."/>
-                    <Button x:Name="equalBtn" Style="{StaticResource customButtonStyle}" Command="{Binding ButtonCommand}" CommandParameter="=" Content="="/>
-                </UniformGrid>
             </Grid>
         </Grid>
-    </Grid>
 </Window>

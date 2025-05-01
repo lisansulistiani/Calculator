@@ -3,15 +3,31 @@
     <Style x:Key="MinMaxButton" TargetType="Button">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-        <Style.Triggers>
+        
+        <!--<Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="CornflowerBlue"/>
-                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Background" Value="#F4BBD3"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Foreground" Value="#FE5D9F"/>
             </Trigger>
-        </Style.Triggers>
+        </Style.Triggers>-->
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#F4BBD3"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        
     </Style>
     <Style x:Key="CloseButton" TargetType="Button">
         <Setter Property="Background" Value="Transparent"/>
@@ -26,7 +42,10 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="Red"/>
+                            <Setter Property="Background" Value="RosyBrown"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Foreground" Value="Wheat"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

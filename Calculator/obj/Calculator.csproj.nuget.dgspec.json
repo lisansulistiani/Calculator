@@ -51,10 +51,6 @@
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
           "dependencies": {
-            "MahApps.Metro.IconPacks": {
-              "target": "Package",
-              "version": "[5.1.0, )"
-            },
             "Microsoft.CodeAnalysis.CSharp.Scripting": {
               "target": "Package",
               "version": "[4.13.0, )"
